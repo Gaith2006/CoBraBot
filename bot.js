@@ -2497,18 +2497,6 @@ client.on("message", (message) => {
 });  
 
 
-client.on('message', message => {
-if (message.content.startsWith('-ping')) {
-           if(!message.channel.guild) return;
-
-if (message.author.bot) return;
-    message.channel.sendMessage(`**Pong ! :** \`${Date.now() - message.createdTimestamp} ms\``);
-    }
-
-});
-
-
-
 client.on('guildCreate', guild => {
 client.channels.get("ROOM ID").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
 Server name: __${guild.name}__
