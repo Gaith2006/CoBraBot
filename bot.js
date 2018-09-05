@@ -183,16 +183,12 @@ client.on("message", message => {
       .setDescription(`
 	  
 	         Please Chose: 
-
 			 
 ${prefix}help-public ⇏ اوامر عامة
-
 ${prefix}help-admin ⇏ اوامر ادارة السيرفر
 			 
 ${prefix}help-games ⇏ اوامر الالعاب
-
 ${prefix}help-music ⇏ اوامر الموسيقى
-
 	  `)
    message.channel.sendEmbed(embed)
     
@@ -320,7 +316,6 @@ client.on("message", message => {
 ❖${prefix}stop ~ لإخرآج البوت من الروم
 ❖${prefix}np ~ لمعرفة الأغنية المشغلة حآليا
 ❖${prefix}queue ~ لمعرفة قآئمة التشغيل
-
  `)
    message.author.sendEmbed(embed)
     
@@ -909,7 +904,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO Zindawrs`` ')
+            .setTitle('``INFO Speed Bot`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -2149,7 +2144,7 @@ let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("By : ITz1uKY")
+     .setFooter("By : Elmusaui_GK and SpeedMC")
                                                 
 
 message.channel.send(embed);
@@ -2287,7 +2282,7 @@ client.on('message', message => {
     .setColor("#707070")
     .addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
     .addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)               
-    .setFooter(`Zindawrs`, 'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')                                 
+    .setFooter(`Speed Bot`, 'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')                                 
     .setThumbnail(heg.avatarURL);
     message.channel.send(id)
 }       });
@@ -2497,61 +2492,22 @@ client.on("message", (message) => {
 });  
 
 
-
 client.on('message', message => {
 if (message.content.startsWith('-ping')) {
            if(!message.channel.guild) return;
- if (message.author.bot) return;
+
+if (message.author.bot) return;
     message.channel.sendMessage(`**Pong ! :** \`${Date.now() - message.createdTimestamp} ms\``);
     }
- });
+
+});
 
 
 
 
-  
 
 
 
-client.on('message', async message => {
-            if(message.content.includes('discord.gg')){ 
-                if(message.member.hasPermission("MANAGE_GUILD")) return;
-        if(!message.channel.guild) return;
-        message.delete()
-          var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Muted");
-    if(!muterole){
-      try{
-        muterole = await message.guild.createRole({
-          name: "Muted",
-          color: "#000000",
-          permissions:[]
-        })
-        message.guild.channels.forEach(async (channel, id) => {
-          await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
-            ADD_REACTIONS: false
-          });
-        });
-      }catch(e){
-        console.log(e.stack);
-      }
-    }
-           if(!message.channel.guild) return message.reply('** This command only for servers**');
-     message.member.addRole(muterole);
-    const embed500 = new Discord.RichEmbed()
-      .setTitle("Muted Ads")
-            .addField(`**  You Have Been Muted **` , `**Reason : Sharing Another Discord Link**`)
-            .setColor("c91616")
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setAuthor(message.author.username, message.author.avatarURL)
-        .setFooter(`${message.guild.name} `)
-     message.channel.send(embed500)
-     message.author.send('` انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا **ف** تكلم مع الادارة `');
-   
-       
-    }
-})
 
 
 
@@ -2565,8 +2521,3 @@ client.on('message', async message => {
 
 
 client.login(process.env.BOT_TAG);
-
-	
-	
-	
-	
